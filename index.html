@@ -1,22 +1,47 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>My Documentation</title>
-<link rel="stylesheet" href="styles/styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Luau UI Library Docs</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
 
-<div class="navbar">
-  <div class="nav-item">
-    <img src="your-icon.png" alt="Icon" class="icon">
-    <span>Documentation</span>
-  </div>
-</div>
+    <header class="navbar">
+        <div class="container">
+            <div class="logo">
+                <i class="fas fa-cubes"></i>
+                <span>My Library Docs</span>
+            </div>
+            <nav class="nav-links">
+                <a href="#">Documentation</a>
+                <a href="#">GitHub</a>
+            </nav>
+        </div>
+    </header>
 
-<div class="content">
-  <h1>Welcome to my Luau Library!</h1>
-  <p>Start here to learn about the library.</p>
-</div>
+    <div class="content-wrapper">
+        <aside class="sidebar">
+            <ul class="sidebar-nav">
+                <li><a href="#" class="active"><i class="fas fa-book"></i> Getting Started</a></li>
+                <li><a href="#"><i class="fas fa-tools"></i> Installation</a></li>
+                <li><a href="#"><i class="fas fa-code"></i> API Reference</a></li>
+                <li><a href="#"><i class="fas fa-shapes"></i> Components</a></li>
+            </ul>
+        </aside>
+
+        <main class="main-content">
+            <h1>Getting Started</h1>
+            <p>Welcome to the official documentation for my Luau UI Library!</p>
+            <p>This library is designed to help you create beautiful and responsive user interfaces in Roblox with ease. To get started, you will need to follow the installation steps and then explore the various components available.</p>
+
+            <div class="cta-section">
+                <a href="#" class="btn btn-primary">Next: Installation <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </main>
+    </div>
 
 </body>
 </html>
