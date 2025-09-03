@@ -74,18 +74,18 @@
             <div class="features">
                 <div class="feature">
                     <i class="fas fa-code feature-icon"></i>
-                    <h3>Easy Syntax</h3>
-                    <p>Simple and intuitive API for quick development</p>
+                    <h3>we live we love we die</h3>
+                    <p>Tuff and Tuff!!!</p>
                 </div>
                 <div class="feature">
                     <i class="fas fa-mobile-alt feature-icon"></i>
-                    <h3>Cross-Platform</h3>
-                    <p>Mobile & PC scaling support</p>
+                    <h3>Supports Mobile n Pc</h3>
+                    <p></p>
                 </div>
                 <div class="feature">
                     <i class="fas fa-save feature-icon"></i>
                     <h3>Config Manager</h3>
-                    <p>Auto-save UI states</p>
+                    <p>Save your configs and load them and delete</p>
                 </div>
                 <div class="feature">
                     <i class="fas fa-bell feature-icon"></i>
@@ -95,12 +95,12 @@
                 <div class="feature">
                     <i class="fas fa-layer-group feature-icon"></i>
                     <h3>Rich Components</h3>
-                    <p>Tabs, Categories, Sections, and more</p>
+                    <p>Tabs, Categories, Sections, buttons and more</p>
                 </div>
                 <div class="feature">
                     <i class="fas fa-palette feature-icon"></i>
                     <h3>Theming</h3>
-                    <p>Multiple theme support</p>
+                    <p>Multi theme support</p>
                 </div>
             </div>
         </section>
@@ -108,29 +108,29 @@
         <!-- Installation -->
         <section id="installation" class="content-section">
             <h1>Installation</h1>
-            <p>Load Proxy UI directly into your Roblox script:</p>
+            <p>Installation Tab:</p>
             <div class="code-container">
                 <button class="copy-btn" onclick="copyCode(this)">
                     <i class="fas fa-copy"></i>
                 </button>
-                <pre><code>local ProxyUI = loadstring(game:HttpGet("https://your-repo-link/proxyui.luau"))();</code></pre>
+                <pre><code>local CompKiller = loadstring(game:HttpGet("https://raw.githubusercontent.com/SirCancer0/idkes/refs/heads/main/faggot.luau"))();</code></pre>
             </div>
-            <p>Ensure that you replace the GitHub raw link with your own library URL.</p>
+            <p>Use this to Load The Library duh.</p>
         </section>
 
         <!-- Window -->
         <section id="window" class="content-section">
             <h1>Window</h1>
-            <p>Windows are the base of your UI.</p>
+            <p>This is where u can add your icon keybind, name scale and text size</p>
             <div class="code-container">
                 <button class="copy-btn" onclick="copyCode(this)">
                     <i class="fas fa-copy"></i>
                 </button>
-                <pre><code>local Window = ProxyUI.new({
-    Name = "Proxy Hub",
+                <pre><code>local Window = CompKiller.new({
+    Name = "My Hub",
     Keybind = "LeftAlt",
-    Logo = "rbxassetid://131365447918087",
-    Scale = ProxyUI.Scale.window,
+    Logo = "rbxassetid://",
+    Scale = ProxyUI.Scale.window, -- you can either choose mobile to use the size for mobile or window for window size or u can use your own scale aka UDIM2 offsets sucks 🤮🤮🤮🤮
     TextSize = 15,
 })</code></pre>
             </div>
@@ -144,7 +144,7 @@
                     <span class="param-name">Keybind</span> <span class="param-type">(string)</span>: Key to toggle UI
                 </div>
                 <div class="param">
-                    <span class="param-name">Logo</span> <span class="param-type">(string)</span>: Roblox asset ID for a logo
+                    <span class="param-name">Logo</span> <span class="param-type">(string)</span>: Create your logo publish into roblox then paste your id after :// in rbxassetid
                 </div>
                 <div class="param">
                     <span class="param-name">Scale</span> <span class="param-type">(enum or UDim2)</span>: UI scale (mobile, window, or custom)
@@ -158,7 +158,7 @@
         <!-- Notifications -->
         <section id="notifications" class="content-section">
             <h1>Notifications</h1>
-            <p>Create notifications with the built-in notifier system.</p>
+            <p>Create notifications</p>
             <div class="code-container">
                 <button class="copy-btn" onclick="copyCode(this)">
                     <i class="fas fa-copy"></i>
@@ -169,7 +169,7 @@ Notifier.new({
     Title = "Notification",
     Content = "Thank you for using this script!",
     Duration = 10,
-    Icon = "rbxassetid://107490050204222"
+    Icon = "rbxassetid://"
 })</code></pre>
             </div>
             
@@ -185,7 +185,7 @@ Notifier.new({
                     <span class="param-name">Duration</span> <span class="param-type">(number)</span>: How long it stays on screen
                 </div>
                 <div class="param">
-                    <span class="param-name">Icon</span> <span class="param-type">(string)</span>: Roblox asset ID for an icon
+                    <span class="param-name">Icon</span> <span class="param-type">(string)</span>: Same Thing said in Windows Tab
                 </div>
             </div>
         </section>
@@ -198,8 +198,8 @@ Notifier.new({
                 <button class="copy-btn" onclick="copyCode(this)">
                     <i class="fas fa-copy"></i>
                 </button>
-                <pre><code>local ConfigManager = ProxyUI:ConfigManager({
-    Directory = "My-UI",
+                <pre><code>local ConfigManager = CompKiller:ConfigManager({
+    Directory = "My-UI", 
     Config = "MyConfigs"
 })
 
