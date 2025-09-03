@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proxy UI - Documentation</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="background"></div>
+    
+    <button class="menu-toggle" onclick="toggleSidebar()">
+        <i class="fas fa-bars"></i>
+    </button>
+    
+    <nav class="sidebar" id="sidebar">
+        <div class="sidebar-background"></div>
+        <h1>Proxy UI</h1>
+        <a href="#intro" class="nav-item active" onclick="showSection('intro', this)">
+            <i class="fas fa-home"></i> Introduction
+        </a>
+        <a href="#installation" class="nav-item" onclick="showSection('installation', this)">
+            <i class="fas fa-download"></i> Installation
+        </a>
+        <a href="#window" class="nav-item" onclick="showSection('window', this)">
+            <i class="fas fa-window-maximize"></i> Window
+        </a>
+        <a href="#notifications" class="nav-item" onclick="showSection('notifications', this)">
+            <i class="fas fa-bell"></i> Notifications
+        </a>
+        <a href="#config" class="nav-item" onclick="showSection('config', this)">
+            <i class="fas fa-cog"></i> Config Manager
+        </a>
+        <a href="#toggles" class="nav-item" onclick="showSection('toggles', this)">
+            <i class="fas fa-toggle-on"></i> Toggles
+        </a>
+        <a href="#sliders" class="nav-item" onclick="showSection('sliders', this)">
+            <i class="fas fa-sliders-h"></i> Sliders
+        </a>
+        <a href="#dropdowns" class="nav-item" onclick="showSection('dropdowns', this)">
+            <i class="fas fa-chevron-down"></i> Dropdowns
+        </a>
+        <a href="#buttons" class="nav-item" onclick="showSection('buttons', this)">
+            <i class="fas fa-mouse-pointer"></i> Buttons
+        </a>
+        <a href="#textboxes" class="nav-item" onclick="showSection('textboxes', this)">
+            <i class="fas fa-keyboard"></i> Textboxes
+        </a>
+        <a href="#colorpickers" class="nav-item" onclick="showSection('colorpickers', this)">
+            <i class="fas fa-palette"></i> Color Pickers
+        </a>
+        <a href="#paragraphs" class="nav-item" onclick="showSection('paragraphs', this)">
+            <i class="fas fa-paragraph"></i> Paragraphs
+        </a>
+        <a href="#themes" class="nav-item" onclick="showSection('themes', this)">
+            <i class="fas fa-paint-brush"></i> Themes
+        </a>
+        <a href="#watermark" class="nav-item" onclick="showSection('watermark', this)">
+            <i class="fas fa-copyright"></i> Watermark
+        </a>
+        <a href="#api" class="nav-item" onclick="showSection('api', this)">
+            <i class="fas fa-code"></i> API Reference
+        </a>
+    </nav>
+
+    <main class="main-content">
+        <!-- Introduction -->
+        <section id="intro" class="content-section active">
+            <h1>Welcome to Proxy UI</h1>
+            <p>Proxy UI is a Roblox Luau UI Library designed for making polished, responsive interfaces. It supports <strong>scaling for mobile and PC</strong>, a built-in <strong>notification system</strong>, <strong>config saving</strong>, and <strong>custom theming</strong>.</p>
+            
+            <h2>Features</h2>
+            <div class="features">
+                <div class="feature">
+                    <i class="fas fa-code feature-icon"></i>
+                    <h3>Easy Syntax</h3>
+                    <p>Simple and intuitive API for quick development</p>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-mobile-alt feature-icon"></i>
+                    <h3>Cross-Platform</h3>
+                    <p>Mobile & PC scaling support</p>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-save feature-icon"></i>
+                    <h3>Config Manager</h3>
+                    <p>Auto-save UI states</p>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-bell feature-icon"></i>
+                    <h3>Notifications</h3>
+                    <p>Built-in notification system</p>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-layer-group feature-icon"></i>
+                    <h3>Rich Components</h3>
+                    <p>Tabs, Categories, Sections, and more</p>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-palette feature-icon"></i>
+                    <h3>Theming</h3>
+                    <p>Multiple theme support</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Installation -->
+        <section id="installation" class="content-section">
+            <h1>Installation</h1>
+            <p>Load Proxy UI directly into your Roblox script:</p>
+            <div class="code-container">
+                <button class="copy-btn" onclick="copyCode(this)">
+                    <i class="fas fa-copy"></i>
+                </button>
+                <pre><code>local ProxyUI = loadstring(game:HttpGet("https://your-repo-link/proxyui.luau"))();</code></pre>
+            </div>
+            <p>Ensure that you replace the GitHub raw link with your own library URL.</p>
+        </section>
+
+        <!-- Window -->
+        <section id="window" class="content-section">
+            <h1>Window</h1>
+            <p>Windows are the base of your UI.</p>
+            <div class="code-container">
+                <button class="copy-btn" onclick="copyCode(this)">
+                    <i class="fas fa-copy"></i>
+                </button>
+                <pre><code>local Window = ProxyUI.new({
+    Name = "Proxy Hub",
+    Keybind = "LeftAlt",
+    Logo = "rbxassetid://131365447918087",
+    Scale = ProxyUI.Scale.window,
+    TextSize = 15,
+})</code></pre>
+            </div>
+            
+            <h2>Parameters</h2>
+            <div class="params">
+                <div class="param">
+                    <span class="param-name">Name</span> <span class="param-type">(string)</span>: Title of the window
+                </div>
+                <div class="param">
+                    <span class="param-name">Keybind</span> <span class="param-type">(string)</span>: Key to toggle UI
+                </div>
+                <div class="param">
+                    <span class="param-name">Logo</span> <span class="param-type">(string)</span>: Roblox asset ID for a logo
+                </div>
+                <div class="param">
+                    <span class="param-name">Scale</span> <span class="param-type">(enum or UDim2)</span>: UI scale (mobile, window, or custom)
+                </div>
+                <div class="param">
+                    <span class="param-name">TextSize</span> <span class="param-type">(number)</span>: Default text size
+                </div>
+            </div>
+        </section>
+
+        <!-- Notifications -->
+        <section id="notifications" class="content-section">
+            <h1>Notifications</h1>
+            <p>Create notifications with the built-in notifier system.</p>
+            <div class="code-container">
+                <button class="copy-btn" onclick="copyCode(this)">
+                    <i class="fas fa-copy"></i>
+                </button>
+                <pre><code>local Notifier = ProxyUI.newNotify()
+
+Notifier.new({
+    Title = "Notification",
+    Content = "Thank you for using this script!",
+    Duration = 10,
+    Icon = "rbxassetid://107490050204222"
+})</code></pre>
+            </div>
+            
+            <h2>Parameters</h2>
+            <div class="params">
+                <div class="param">
+                    <span class="param-name">Title</span> <span class="param-type">(string)</span>: Title of the notification
+                </div>
+                <div class="param">
+                    <span class="param-name">Content</span> <span class="param-type">(string)</span>: Message displayed
+                </div>
+                <div class="param">
+                    <span class="param-name">Duration</span> <span class="param-type">(number)</span>: How long it stays on screen
+                </div>
+                <div class="param">
+                    <span class="param-name">Icon</span> <span class="param-type">(string)</span>: Roblox asset ID for an icon
+                </div>
+            </div>
+        </section>
+
+        <!-- Config -->
+        <section id="config" class="content-section">
+            <h1>Config Manager</h1>
+            <p>Manage saving and loading of configs.</p>
+            <div class="code-container">
+                <button class="copy-btn" onclick="copyCode(this)">
+                    <i class="fas fa-copy"></i>
+                </button>
+                <pre><code>local ConfigManager = ProxyUI:ConfigManager({
+    Directory = "My-UI",
+    Config = "MyConfigs"
+})
+
+local ConfigUI = Window:DrawConfig({
+    Name = "Config",
+    Icon = "folder",
+    Config = ConfigManager
+})
+
+ConfigUI:Init();</code></pre>
+            </div>
+        </section>
+
+        <!-- Toggles -->
+        <section id="toggles" class="content-section">
+            <h1>Toggles</h1>
+            <p>Toggles allow users to enable/disable features.</p>
+            <div class="code-container">
+                <button class="copy-btn" onclick="copyCode(this)">
+                    <i class="fas fa-copy"></i>
+                </button>
+                <pre><code>local Toggle = Section:AddToggle({
+    Name = "Godmode",
+    Flag = "Toggle_Godmode",
+    Default = false,
+    Callback = function(state)
+        print("Godmode:", state)
+    end
+})</code></pre>
+            </div>
+            
+            <h2>Linking a Keybind</h2>
+            <div class="code-container">
+                <button class="copy-btn" onclick="copyCode(this)">
+                    <i class="fas fa-copy"></i>
+                </button>
+                <pre><code>local Keybind = Toggle.Link:AddKeybind({
+    Default = "E",
+    Flag = "Godmode_Keybind",
+    Callback = print
+})</code></pre>
+            </div>
+        </section>
+
+        <!-- Sliders -->
+        <section id="sliders" class="content-section">
+            <h1>Sliders</h1>
+            <p>Sliders let users pick a value between a range.</p>
+            <div class="code-container">
+                <button class="copy-btn" onclick="copyCode(this)">
+                    <i class="fas fa-copy"></i>
+                </button>
+                <pre><code>Section:AddSlider({
+    Name = "WalkSpeed",
+    Min = 0,
+    Max = 100,
+    Default = 16,
+    Round = 0,
+    Flag = "Slider_WalkSpeed",
+    Callback = function(value)
+        print("WalkSpeed set to:", value)
+    end
+})</code></pre>
+            </div>
+            
+            <h2>Parameters</h2>
+            <div class="params">
+                <div class="param">
+                    <span class="param-name">Name</span> <span class="param-type">(string)</span>: Label for the slider
+                </div>
+                <div class="param">
+                    <span class="param-name">Min</span> <span class="param-type">(number)</span>: Minimum value
+                </div>
+                <div class="param">
+                    <span class="param-name">Max</span> <span class="param-type">(number)</span>: Maximum value
+                </div>
+                <div class="param">
+                    <span class="param-name">Default</span> <span class="param-type">(number)</span>: Default value
+                </div>
+                <div class="param">
+                    <span class="param-name">Round</span> <span class="param-type">(number)</span>: Decimal rounding (0 = integer)
+                </div>
+                <div class="param">
+                    <span class="param-name">Flag</span> <span class="param-type">(string)</span>: Save ID for config
+                </div>
+                <div class="param">
+                    <span class="param-name">Callback</span> <span class="param-type">(function)</span>: Function when value changes
+                </div>
+            </div>
+        </section>
+
+        <!-- Dropdowns -->
+        <section id="dropdowns" class="content-section">
+            <h1>Dropdowns</h1>
+            <p>Dropdowns let users select one or multiple options.</p>
+            
+            <h2>Single Dropdown</h2>
+            <div class="code-container">
+                <button class="copy-btn" onclick="copyCode(this)">
+                    <i class="fas fa-copy"></i>
+                </button>
+                <pre><code>Section:AddDropdown({
+    Name = "Select Body Part",
+    Default = "Head",
+    Flag = "Single_Dropdown",
+    Values = {"Head","Body","Arms","Legs"},
+    Callback = print
+})</code></pre>
+            </div>
+            
+            <h2>Multi Dropdown</h2>
+            <div class="code-container">
+                <button class="copy-btn" onclick="copyCode(this)">
+                    <i class="fas fa-copy"></i>
+                </button>
+                <pre><code>Section:AddDropdown({
+    Name = "Select Multiple",
+    Default = {"Head"},
+    Multi = true,
+    Flag = "Multi_Dropdown",
+    Values = {"Head","Body","Arms","Legs"},
+    Callback = print
+})</code></pre>
+            </div>
+        </section>
+
+        <!-- Buttons -->
+        <section id="buttons" class="content-section">
+            <h1>Buttons</h1>
+            <p>Buttons let users trigger actions.</p>
+            <div class="code-container">
+                <button class="copy-btn" onclick="copyCode(this)">
+                    <i class="fas fa-copy"></i>
+                </button>
+                <pre><code>Section:AddButton({
+    Name = "Teleport",
+    Callback = function()
+        print("Teleporting...")
+    end
+})</code></pre>
+            </div>
+        </section>
+
+        <!-- Textboxes -->
+        <section id="textboxes" class="content-section">
+            <h1>Textboxes</h1>
+            <p>Textboxes let users input text.</p>
+            <div class="code-container">
+                <button class="copy-btn" onclick="copyCode(this)">
+                    <i class="fas fa-copy"></i>
+                </button>
+                <pre><code>Section:AddTextBox({
+    Name = "Custom Name",
+    Placeholder = "Enter text...",
+    Default = "Player1",
+    Callback = print
+})</code></pre>
+            </div>
+        </section>
+
+        <!-- Color Pickers -->
+        <section id="colorpickers" class="content-section">
+            <h1>Color Pickers</h1>
+            <p>Let users choose a color.</p>
+            <div class="code-container">
+                <button class="copy-btn" onclick="copyCode(this)">
+                    <i class="fas fa-copy"></i>
+                </button>
+                <pre><code>Section:AddColorPicker({
+    Name = "Highlight",
+    Default = Color3.fromRGB(0, 255, 140),
+    Flag = "Color_Highlight",
+    Callback = print
+})</code></pre>
+            </div>
+        </section>
+
+        <!-- Paragraphs -->
+        <section id="paragraphs" class="content-section">
+            <h1>Paragraphs</h1>
+            <p>Paragraphs are blocks of text inside your UI.</p>
+            <div class="code-container">
+                <button class="copy-btn" onclick="copyCode(this)">
+                    <i class="fas fa-copy"></i>
+                </button>
+                <pre><code>Section:AddParagraph({
+    Title = "Info",
+    Content = "This is a description."
+})</code></pre>
+            </div>
+        </section>
+
+        <!-- Themes -->
+        <section id="themes" class="content-section">
+            <h1>Themes</h1>
+            <p>Change the look of your UI with themes.</p>
+            <div class="code-container">
+                <button class="copy-btn" onclick="copyCode(this)">
+                    <i class="fas fa-copy"></i>
+                </button>
+                <pre><code>ThemeTab:DrawSection({
+    Name = "UI Themes"
+}):AddDropdown({
+    Name = "Select Theme",
+    Default = "Default",
+    Values = {
+        "Default",
+        "Dark Green",
+        "Dark Blue",
+        "Purple Rose",
+        "Skeet"
+    },
+    Callback = function(v)
+        ProxyUI:SetTheme(v)
+    end
+})</code></pre>
+            </div>
+        </section>
+
+        <!-- Watermark -->
+        <section id="watermark" class="content-section">
+            <h1>Watermark</h1>
+            <p>The watermark appears at the corner of your UI.</p>
+            <div class="code-container">
+                <button class="copy-btn" onclick="copyCode(this)">
+                    <i class="fas fa-copy"></i>
+                </button>
+                <pre><code>local Watermark = Window:Watermark()
+
+Watermark:AddText({
+    Icon = "user",
+    Text = "User123"
+})
+
+Watermark:AddText({
+    Icon = "clock",
+    Text = ProxyUI:GetDate()
+})</code></pre>
+            </div>
+        </section>
+
+        <!-- API Reference -->
+        <section id="api" class="content-section">
+            <h1>API Reference</h1>
+            <p>A quick reference for all major functions.</p>
+            <div class="params">
+                <div class="param">
+                    <span class="param-name">ProxyUI.newNotify()</span> → Notification handler
+                </div>
+                <div class="param">
+                    <span class="param-name">ProxyUI:ConfigManager(options)</span> → Config system
+                </div>
+                <div class="param">
+                    <span class="param-name">ProxyUI:Loader(icon, duration)</span> → Loading screen
+                </div>
+                <div class="param">
+                    <span class="param-name">ProxyUI.new(options)</span> → Creates a new window
+                </div>
+                <div class="param">
+                    <span class="param-name">Window:DrawCategory(options)</span> → Create category
+                </div>
+                <div class="param">
+                    <span class="param-name">Window:DrawTab(options)</span> → Create tab
+                </div>
+                <div class="param">
+                    <span class="param-name">Window:DrawSection(options)</span> → Create section
+                </div>
+                <div class="param">
+                    <span class="param-name">Section:AddToggle(options)</span> → Toggle button
+                </div>
+                <div class="param">
+                    <span class="param-name">Section:AddKeybind(options)</span> → Keybind input
+                </div>
+                <div class="param">
+                    <span class="param-name">Section:AddSlider(options)</span> → Slider input
+                </div>
+                <div class="param">
+                    <span class="param-name">Section:AddDropdown(options)</span> → Dropdown menu
+                </div>
+                <div class="param">
+                    <span class="param-name">Section:AddButton(options)</span> → Button
+                </div>
+                <div class="param">
+                    <span class="param-name">Section:AddParagraph(options)</span> → Paragraph text
+                </div>
+                <div class="param">
+                    <span class="param-name">Section:AddTextBox(options)</span> → Textbox input
+                </div>
+                <div class="param">
+                    <span class="param-name">Window:Watermark()</span> → Watermark
+                </div>
+                <div class="param">
+                    <span class="param-name">Window:DrawConfig(options)</span> → Config UI
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
