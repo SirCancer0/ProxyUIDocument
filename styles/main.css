@@ -1,7 +1,8 @@
 :root {
-    --primary-color: #3498db;
-    --dark-bg: #1a1a1a;
-    --light-text: #e0e0e0;
+    --primary-color: #007bff;
+    --dark-bg: #111;
+    --secondary-bg: #1a1a1a;
+    --light-text: #f0f0f0;
     --border-color: #333;
     --sidebar-width: 250px;
 }
@@ -16,7 +17,7 @@ body {
 
 /* Navbar */
 .navbar {
-    background-color: #222;
+    background-color: var(--secondary-bg);
     padding: 1rem 2rem;
     border-bottom: 1px solid var(--border-color);
     box-shadow: 0 2px 5px rgba(0,0,0,0.2);
@@ -54,13 +55,13 @@ body {
 /* Main Layout */
 .content-wrapper {
     display: flex;
-    min-height: calc(100vh - 70px); /* Adjust based on navbar height */
+    min-height: calc(100vh - 70px);
 }
 
 /* Sidebar */
 .sidebar {
     width: var(--sidebar-width);
-    background-color: #222;
+    background-color: var(--secondary-bg);
     border-right: 1px solid var(--border-color);
     padding: 1.5rem 0;
     box-shadow: 2px 0 5px rgba(0,0,0,0.2);
@@ -87,7 +88,7 @@ body {
 
 .sidebar-nav li a:hover,
 .sidebar-nav li a.active {
-    background-color: #333;
+    background-color: var(--border-color);
     color: var(--primary-color);
 }
 
@@ -126,5 +127,5 @@ body {
 }
 
 .btn-primary:hover {
-    background-color: #2980b9;
+    background-color: #0069d9;
 }
